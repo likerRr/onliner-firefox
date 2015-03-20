@@ -1,5 +1,12 @@
 var $j = jQuery.noConflict();
 
+var globValue;
+
+self.port.on("alertValue", function (inValue) {
+	globValue = inValue;
+	alert(inValue);
+});
+
 $j(document).ready(function() {
 	var $priceSelector = $j('.pprice, .product-aside__price--primary, .b-offers-desc__info-sub > a');
   var currency = parseInt($j('#currency-informer > a > ._u').text().replace(/[\s\$]+/g, ''), 10);
